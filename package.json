@@ -1,0 +1,43 @@
+{
+  "name": "vdom-file-upload",
+  "description": "File upload widget for virtual-dom",
+  "main": "FileUpload.js",
+  "version": "0.0.0",
+  "keywords": [
+    "virtual-dom",
+    "mercury",
+    "ui",
+    "component",
+    "file",
+    "input",
+    "form"
+  ],
+  "browserify": {
+    "transform": []
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify -d example/example.js > example/bundle.js",
+    "watch": "watchify example/example.js -o example/bundle.js -dv",
+    "dev": "npm run watch & npm run server",
+    "postversion": "git push && git push --tags",
+    "server": "node server.js",
+    "demo": "browserify example/example.js > example/bundle.js && html-inline example/index.html | curl -sT- https://htmlb.in"
+  },
+  "author": "Nick Thomas <nichoth@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nichoth/vdom-file-upload.git"
+  },
+  "license": "ISC",
+  "peerDependencies": {},
+  "devDependencies": {
+    "ecstatic": "^1.2.0",
+    "main-loop": "^3.2.0"
+  },
+  "dependencies": {
+    "@nichoth/state": "0.0.2",
+    "observ": "^0.2.0",
+    "virtual-dom": "^2.1.1"
+  }
+}
