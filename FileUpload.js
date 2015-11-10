@@ -1,4 +1,3 @@
-var h = require('virtual-dom/h');
 var state = require('@nichoth/state');
 var observ = require('observ');
 
@@ -21,7 +20,7 @@ function FileUpload(opts) {
   return s;
 }
 
-FileUpload.render = function(state) {
+FileUpload.render = function(h, state) {
   return h('div.vdom-file-upload', [
     h('input', {
       type: 'file',

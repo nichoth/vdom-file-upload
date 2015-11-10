@@ -1,6 +1,6 @@
 # vdom file upload
 
-File upload widget for virtual-dom
+File upload state machine for virtual dom renderer.
 
 
 ## install
@@ -9,7 +9,7 @@ File upload widget for virtual-dom
 
 
 ## example
-    
+
 ```js
 var vdom = require('virtual-dom');
 var h = vdom.h;
@@ -19,7 +19,11 @@ var state = FileUpload({
 
 });
 
-var loop = require('main-loop')( state(), FileUpload.render, vdom );
+var loop = require('main-loop')(
+  state(),
+  // pass in a hyperscript function
+  FileUpload.render.bind(null, vdom.h), vdom
+);
 state(loop.update);
 document.getElementById('content').appendChild(loop.target);
 ```

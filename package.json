@@ -1,6 +1,6 @@
 {
   "name": "vdom-file-upload",
-  "description": "File upload widget for virtual-dom",
+  "description": "File upload state machine for virtual dom renderer",
   "main": "FileUpload.js",
   "version": "0.0.0",
   "keywords": [
@@ -33,11 +33,11 @@
   "peerDependencies": {},
   "devDependencies": {
     "ecstatic": "^1.2.0",
-    "main-loop": "^3.2.0"
+    "main-loop": "^3.2.0",
+    "virtual-dom": "^2.1.1"
   },
   "dependencies": {
     "@nichoth/state": "0.0.2",
-    "observ": "^0.2.0",
-    "virtual-dom": "^2.1.1"
+    "observ": "^0.2.0"
   }
 }
