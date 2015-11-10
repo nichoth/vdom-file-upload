@@ -1,30 +1,38 @@
 var state = require('@nichoth/state');
 var observ = require('observ');
+var oArray = require('observ-array');
+var toArray = require('lodash.toarray');
 
 module.exports = FileUpload;
 
 function FileUpload(opts) {
   opts = opts || {};
+  opts.onChange = opts.onChange || function(){};
+
   var s = state({
+    label: observ(opts.label || ''),
+    files: oArray([]),
     handles: {
       onChange: onChange
     }
   });
 
-  function onChange() {
-    console.log(arguments);
-    console.log(this);
-    console.log(this.files);
+  function onChange(files) {
+    s.files.set( toArray(files) );
   }
 
   return s;
 }
 
 FileUpload.render = function(h, state) {
+  console.log(state.files);
   return h('div.vdom-file-upload', [
+    h('label.vdom-file-upload-label', [state.label]),
     h('input', {
       type: 'file',
-      onchange: state.handles.onChange
+      onchange: function(ev) {
+        state.handles.onChange(this.files);
+      }
     }, [])
   ]);
 };

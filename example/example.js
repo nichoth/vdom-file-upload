@@ -2,7 +2,7 @@ var vdom = require('virtual-dom');
 var FileUpload = require('../FileUpload.js');
 
 var state = FileUpload({
-
+  label: 'example'
 });
 
 var loop = require('main-loop')(

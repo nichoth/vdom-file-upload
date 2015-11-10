@@ -1,0 +1,16 @@
+.vdom-file-upload label {
+    letter-spacing: 0.03em;
+    font-weight: 100;
+    vertical-align: bottom;
+    width: 25%;
+}
+.vdom-file-upload label, .vdom-form-field input {
+    display: inline-block;
+    font-size: 1.5em;
+}
+
+.vdom-file-upload {
+  padding: 1em;
+  background-color: whitesmoke;
+  margin-bottom: 1em;
+}
