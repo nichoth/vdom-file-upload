@@ -19,13 +19,13 @@ function FileUpload(opts) {
 
   function onChange(files) {
     s.files.set( toArray(files) );
+    opts.onChange(files);
   }
 
   return s;
 }
 
 FileUpload.render = function(h, state) {
-  console.log(state.files);
   return h('div.vdom-file-upload', [
     h('label.vdom-file-upload-label', [state.label]),
     h('input', {
