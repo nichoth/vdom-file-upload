@@ -30,6 +30,7 @@ var loop = require('main-loop')(
   FileUpload.render.bind(null, vdom.h),
   vdom
 );
+
 state(loop.update);
 document.getElementById('content').appendChild(loop.target);
 ```

@@ -25,6 +25,10 @@ function FileUpload(opts) {
   return s;
 }
 
+FileUpload.hasValue = function(state) {
+  return state.files.length > 0;
+};
+
 FileUpload.render = function(h, state) {
   return h('div.vdom-file-upload', [
     h('label.vdom-file-upload-label', [state.label]),
