@@ -2,7 +2,7 @@
   "name": "vdom-file-upload",
   "description": "File upload state machine for virtual dom renderer",
   "main": "FileUpload.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "keywords": [
     "virtual-dom",
     "mercury",
