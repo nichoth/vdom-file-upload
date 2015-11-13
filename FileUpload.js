@@ -26,7 +26,10 @@ function FileUpload(opts) {
 }
 
 FileUpload.value = function(state) {
-  return state.files[0];
+  return state.files.length > 1 ?
+    state.files :
+    state.files[0]
+  ;
 };
 
 FileUpload.hasValue = function(state) {
